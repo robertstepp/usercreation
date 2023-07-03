@@ -2,7 +2,7 @@ Add-Type -AssemblyName System.Windows.Forms
 
 # Define the domain name
 $domainName = "test.com"
-$passwordLength = 32S
+$passwordLength = 32
 
 # Dot-source the passwordgenerator.ps1 file
 . .\passwordgenerator.ps1

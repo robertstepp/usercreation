@@ -26,7 +26,7 @@ function New-UserCreationRandomPassword {
     $password += ($characters | Get-Random -Count $remainingLength)
 
     # Shuffle the password
-    $password = (ConvertTo-SecureString( -String ($password.ToCharArray() | Get-Random -Count $Length) -join "") - -Force)
+    $password = ConvertTo-SecureString -String (($password.ToCharArray() | Get-Random -Count $Length) -join "") -AsPlainText -Force
 
     return $password
 }
