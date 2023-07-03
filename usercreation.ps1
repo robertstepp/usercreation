@@ -59,7 +59,7 @@ $buttonAdd.Add_Click({
     $username = $firstName.Substring(0, 1) + $lastName.Substring(0, [Math]::Min(7, $lastName.Length))
     $displayName = $firstName + " " + $lastName
     $employeeID = [int]$textBoxEmployeeNumber.Text
-    
+
     # Generate a random password
     $password = New-UserCreationRandomPassword -Length $passwordLength
 
@@ -72,7 +72,7 @@ $buttonAdd.Add_Click({
     # Example command: Add-CdmUser -Name $displayName -UserID $username -Password $password -Domain "Default Domain"
 
     # Add code to create Active Directory user account using $username, $displayName, and $password
-    $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
+    $securePassword = $password
     $userParams = @{
         Name = $displayName
         SamAccountName = $username
