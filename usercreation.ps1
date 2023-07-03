@@ -3,6 +3,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Define the domain name
 $domainName = "test.com"
 $passwordLength = 32
+$nonAlphachar = 8
 
 # Dot-source the passwordgenerator.ps1 file
 . .\passwordgenerator.ps1
@@ -61,7 +62,7 @@ $buttonAdd.Add_Click({
     $employeeID = [int]$textBoxEmployeeNumber.Text
 
     # Generate a random password
-    $password = New-UserCreationRandomPassword -Length $passwordLength
+    $password = New-UserCreationRandomPassword -Length $passwordLength -NonAlpha $nonAlphachar
 
     Write-Host $username
     Write-Host $displayName
