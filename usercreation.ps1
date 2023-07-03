@@ -67,10 +67,10 @@ $buttonAdd.Add_Click({
     Write-Host $displayName
     Write-Host $password
     Write-Host $employeeID
- 
+
     # Add code to create Centrify user account using $username, $displayName, and $password
     # Example command: Add-CdmUser -Name $displayName -UserID $username -Password $password -Domain "Default Domain"
-    
+
     # Add code to create Active Directory user account using $username, $displayName, and $password
     $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
     $userParams = @{
